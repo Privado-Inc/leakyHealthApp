@@ -163,12 +163,13 @@ public class PIIUtils {
         Info adInfo = null;
         try {
             adInfo = AdvertisingIdClient.getAdvertisingIdInfo(context);
+            mixpanel.track(context);
         } catch (IOException e) {
             // ...
         } catch (GooglePlayServicesNotAvailableException | GooglePlayServicesRepairableException e) {
             // ...
         }
-        String userId = adInfo.getId();
+//       String userId = adInfo.getId();
         return userId;
     }
 

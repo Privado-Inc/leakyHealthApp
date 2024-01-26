@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.facebook.appevents.AppEventsLogger;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import io.privado.privadohealthapp.models.DrugInformation;
 import io.privado.privadohealthapp.models.PersonalInformation;
@@ -63,5 +64,7 @@ public class DrugInfoViewModel extends ViewModel {
         parameters.putString("health_condition", drugInformation.getHealthCondition());
 
         FirebaseAnalytics.getInstance(getApplicationContext()).logEvent("drug_info", parameters);
+//        MixpanelAPI.track("drug_info", parameters);
+
     }
 }

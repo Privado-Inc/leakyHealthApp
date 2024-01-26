@@ -104,6 +104,21 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+    <!-- Branch init -->
+    <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_xxxx"/>
+    <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_yyyy"/>
+    <meta-data android:name="io.branch.sdk.TestMode" android:value="false" /> <!-- Set to true to use Branch_Test_Key -->
+    
+    <!-- Branch URI Scheme -->
+    <activity android:name="com.example.MyActivity">
+        <intent-filter>
+            <data android:scheme="yourapp" android:host="open" />
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+        </intent-filter>
+    </activity>
+        
     </application>
 
 </manifest>
